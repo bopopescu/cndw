@@ -30,8 +30,7 @@ fi
 
 sudo apt update -y
 sudo apt install -y gcc linux-headers-$(uname -r) build-essential git ansible python-pip google-cloud-sdk azure-cli jq
-pip install aws-shell
-
+sudo pip install awscli aws-shell
 
 # DEVBINPATH="${PWD}/bin:$PATH"
 
