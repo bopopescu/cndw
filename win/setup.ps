@@ -1,0 +1,12 @@
+#Requires -RunAsAdministrator
+
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
+
+Invoke-WebRequest -Uri https://d1vvhvl2y92vvt.cloudfront.net/AWSCLIV2.msi -OutFile .\AWSCLIV2.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AWSCLIV2.msi /quiet'
+
+.\GoogleCloudSDKInstaller.exe /noreporting /nodesktop /S
+
+
+$addpath = "$pwd\bin"
+
+pathman.exe /au $addpath
