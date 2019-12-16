@@ -6,24 +6,31 @@ A collection of binaries to work with cloud native apps and idempotent bash scri
 
 ### Ubuntu Linux setup
 
-`git clone git@github.com:raph/cndw.git`
-`cd cndw/linux`
-`./setup-ubuntu.sh`
-
+```
+git clone git@github.com:raph/cndw.git
+cd cndw/linux
+./setup-ubuntu.sh 
+```
 
 ### Mac
 
-`git clone git@github.com:raph/cndw.git`
-`cd cndw/linux`
-`./setup.sh`
+```
+git clone git@github.com:raph/cndw.git
+cd cndw/mac
+./setup.sh
+```
 
 
 ### Windows
 
-
+```
+git clone git@github.com:raph/cndw.git
+cd cndw/win
+./setup.ps
+```
 ## Usage
 
-After running setup.sh, you can initiate your kubernetes environment using `minikube start --vm-driver=vmware` 
+After running setup, you can initiate your kubernetes environment using `minikube start --vm-driver=vmware` 
 
 terraform, skaffold, bazel and kubectl are available from your path so you can start developing your kubernetes app right away
 

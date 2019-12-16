@@ -17,7 +17,7 @@ if [ ! -f /etc/apt/trusted.gpg.d/microsoft.asc.gpg ]; then
    curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
 fi
 
-#Add the Azure CLI software repository:
+# Add the Azure CLI software repository:
 if [ ! -f /etc/apt/sources.list.d/azure-cli.list ]; then
    AZ_REPO=$(lsb_release -cs)
    if [ "$AZ_REPO" == "hera" ]; then 
@@ -32,12 +32,7 @@ sudo apt update -y
 sudo apt install -y gcc linux-headers-$(uname -r) build-essential git ansible python-pip google-cloud-sdk azure-cli jq
 sudo pip install awscli aws-shell
 
-# DEVBINPATH="${PWD}/bin:$PATH"
-
-# echo export PATH="$DEVBINPATH:$PATH" >> ~/.bashrc
-
-
-
+# Add path to .bashrc if doesnt exist
 DEVBINPATH="${PWD}/bin"
 grep cndw ~/.bashrc > /dev/null 2> /dev/null
 [[ "$?" != 0 ]] && echo export PATH=$DEVBINPATH:\$PATH >> ~/.bashrc
